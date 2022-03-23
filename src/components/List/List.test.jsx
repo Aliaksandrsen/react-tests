@@ -16,4 +16,16 @@ describe('List component', () => {
 
     expect(screen.queryByRole('list')).toBeNull();
   });
+
+  test('List snapshot', () => {
+    const view = render(<List items={data} />);
+
+    expect(view).toMatchSnapshot();
+  });
+
+  test('List empty snapshot', () => {
+    const view = render(<List items />);
+
+    expect(view).toMatchSnapshot();
+  });
 });
