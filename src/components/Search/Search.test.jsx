@@ -55,4 +55,14 @@ describe('Search component', () => {
     expect(screen.getByRole('textbox')).toHaveClass('filled');
     expect(screen.getByText(/search/i)).toHaveClass('label');
   });
+
+  test('search snapshot', () => {
+    const view = render(
+      <Search value="" onChange={onChange}>
+        Find:
+      </Search>
+    );
+
+    expect(view).toMatchSnapshot();
+  });
 });
