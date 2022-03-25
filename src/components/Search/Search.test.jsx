@@ -47,4 +47,12 @@ describe('Search component', () => {
 
     expect(onChange).toHaveBeenCalledTimes(5);
   });
+
+  test('dimamyc styles works', () => {
+    render(<Search value="abc" onChange={onChange} />);
+
+    expect(screen.getByRole('textbox')).toHaveClass('input');
+    expect(screen.getByRole('textbox')).toHaveClass('filled');
+    expect(screen.getByText(/search/i)).toHaveClass('label');
+  });
 });
